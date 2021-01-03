@@ -6,7 +6,9 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.FileInputStream;
+import java.util.Objects;
 
 @Service
 public class FBInitialize {
@@ -14,8 +16,12 @@ public class FBInitialize {
     @PostConstruct
     public void initialize() {
         try {
-            FileInputStream serviceAccount =
-                    new FileInputStream("C:\\Users\\Adir-pc\\Desktop\\qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
+            String fileName = "qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json";
+            ClassLoader classLoader = getClass().getClassLoader();
+
+            File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+            FileInputStream serviceAccount = new FileInputStream(file);
+                    //new FileInputStream("qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
 
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))

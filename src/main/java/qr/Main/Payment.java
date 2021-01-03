@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Payment {
 
+    String companyName;
     double amount;
     String currency;
     String customer;
