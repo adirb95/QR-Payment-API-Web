@@ -1,13 +1,12 @@
-package Model;
+package qr.Main;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@Configuration
-@EnableAutoConfiguration
+
+
+@SpringBootApplication()
 public class QrPaymentProjectApplication {
 
     public static void main(String[] args) {

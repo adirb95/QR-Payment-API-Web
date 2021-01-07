@@ -28,4 +28,9 @@ public class HistoryController {
         return "welcome";
     }
 
+    @GetMapping("/hello")
+    String getHello() {
+        return "hello";
+    }
+
 }

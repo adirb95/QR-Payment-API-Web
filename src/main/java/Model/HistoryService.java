@@ -15,6 +15,7 @@ import java.util.concurrent.ExecutionException;
 public class HistoryService {
 
     public static List<Payment> getPayments() throws InterruptedException, ExecutionException {
+        System.out.println("History requested");
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = dbFirestore.collection("Payments").get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();

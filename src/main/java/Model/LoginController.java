@@ -1,11 +1,14 @@
-package Model;
+package qr.Main;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+
+import org.apache.commons.logging.Log;
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import Model.LoginInfo;
-import Model.LoginService;
-import Model.User;
 
 import java.util.concurrent.ExecutionException;
 
@@ -20,11 +23,5 @@ public class LoginController {
         return loginService.logIn(loginInfo.getEmail(),loginInfo.getPassword());
     }
 
-    @GetMapping("/hello")
-    String returnHello () throws JSONException {
-       User user=new User();
-       user.setFirstName("adir");
-       return "hello";
-    }
 
 }
