@@ -5,9 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 
-@SpringBootApplication(scanBasePackages={"Model","Controller"})
 
-//@ComponentScan({"Controller","Model"})
+@SpringBootApplication()
 public class QrPaymentProjectApplication {
 
     public static void main(String[] args) {

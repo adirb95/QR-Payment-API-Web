@@ -23,11 +23,5 @@ public class LoginController {
         return loginService.logIn(loginInfo.getEmail(),loginInfo.getPassword());
     }
 
-    @GetMapping("/hello")
-    User returnHello () throws JSONException {
-       User user=new User();
-       user.setFirstName("adir");
-       return user;
-    }
 
 }

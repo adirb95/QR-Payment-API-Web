@@ -21,4 +21,9 @@ public class HistoryController {
         return HistoryService.getPayments();
     }
 
+    @GetMapping("/hello")
+    String getHello() {
+        return "hello";
+    }
+
 }
