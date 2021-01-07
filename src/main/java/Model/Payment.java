@@ -1,7 +1,9 @@
-package qr.Main;
+package Model;
+
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
+@Component
 public class Payment {
 
     String companyName;

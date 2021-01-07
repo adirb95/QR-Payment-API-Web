@@ -1,4 +1,4 @@
-package qr.Main;
+package qr;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

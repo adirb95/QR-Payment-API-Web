@@ -1,5 +1,8 @@
-package qr.Main;
+package Model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
     String firstName;

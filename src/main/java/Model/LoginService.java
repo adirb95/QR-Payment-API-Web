@@ -1,4 +1,4 @@
-package qr.Main;
+package Model;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
@@ -7,14 +7,13 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @Service
 public class LoginService {
-    public User logIn(String email ,String pw) throws ExecutionException, InterruptedException {
+    public User logIn(String email , String pw) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = dbFirestore.collection("Users").get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();

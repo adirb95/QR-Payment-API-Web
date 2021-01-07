@@ -1,4 +1,4 @@
-package qr.Main;
+package Model;
 
 public class CodeText {
     String codeTextString;
