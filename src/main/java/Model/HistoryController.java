@@ -1,14 +1,14 @@
 package Model;
 
-
+import com.google.zxing.WriterException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import Model.HistoryService;
 import Model.Payment;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -28,9 +28,16 @@ public class HistoryController {
         return "welcome";
     }
 
+
+ /*   QRCodeGenerator qrCodeGenerator;
     @GetMapping("/hello")
-    String getHello() {
-        return "hello";
-    }
+    void Generateqr() throws IOException, WriterException {
+        MerchantNewPayment merchantNewPayment=new MerchantNewPayment();
+        merchantNewPayment.setMerchantName("mega");
+
+        qrCodeGenerator=new QRCodeGenerator();
+        qrCodeGenerator.generateQRCodeImage(merchantNewPayment.toString(),qrCodeGenerator.getSource());
+    }*/
+
 
 }
