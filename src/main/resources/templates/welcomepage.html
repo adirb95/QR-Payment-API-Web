@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome page</title>
+    <style>
+        body{background-color: white;margin: 200px}
+        h1{color:black}
+    </style>
+</head>
+<body>
+<h1>
+    Welcome!
+</h1>
+<p>Hi merchant!</p>
+<p>Press here for qr code!</p>
+<form method="post">
+    <input type="number" name="amount"></input>
+    <button type="submit">generate qr code</button>
+    <p th:text="${name}">Welcome to our  store!</p>
+</form>
+<img src="\src\main\resources\static\images" alt="qr image" th:src="@{images/newpicture.png}" />
+
+</body>
+</html>
