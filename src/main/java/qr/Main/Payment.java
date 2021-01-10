@@ -1,21 +1,27 @@
 package qr.Main;
 
-import java.util.Date;
-
 public class Payment {
 
     String companyName;
     double amount;
     String currency;
     String customer;
-    Date date;
+    String date;
     String status;
 
-    public Date getDate() {
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

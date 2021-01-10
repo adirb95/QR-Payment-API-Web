@@ -3,6 +3,7 @@ package qr.Main;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import qr.Main.HistoryService;
 import qr.Main.Payment;
@@ -17,8 +18,8 @@ public class HistoryController {
     HistoryService historyService;
 
     @GetMapping("/history")
-    List<Payment> getHistory() throws ExecutionException, InterruptedException {
-        return HistoryService.getPayments();
+    List<Payment> getHistory(@RequestBody User user) throws ExecutionException, InterruptedException {
+        return HistoryService.getPayments(user);
     }
 
     @GetMapping("/hello")
