@@ -4,6 +4,8 @@ import com.google.zxing.WriterException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import Model.HistoryService;
 import Model.Payment;
@@ -18,14 +20,16 @@ public class HistoryController {
     @Autowired
     HistoryService historyService;
 
-    @GetMapping("/history")
-    List<Payment> getHistory() throws ExecutionException, InterruptedException {
-        return HistoryService.getPayments();
+    @PostMapping("/history")
+    List<Payment>  getHistory(@RequestBody User user) throws ExecutionException, InterruptedException {
+        return HistoryService.getPayments(user);
     }
     @GetMapping("/welcome")
     String welcomepage(Model model){
         model.addAttribute("welcomepage","hello");
         return "welcome";
+   /* @PostMapping("/newpayment")*/
+
     }
 
 

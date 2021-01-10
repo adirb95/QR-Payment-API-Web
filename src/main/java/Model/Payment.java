@@ -8,17 +8,26 @@ public class Payment {
 
     String companyName;
     double amount;
-    String currency;
-    String customer;
-    Date date;
-    String status;
 
-    public Date getDate() {
-        return date;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setDate(Date date) {
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    String currency;
+    String customer;
+    String date;
+    String status;
+
+    public String getDate() {
+        return date;
     }
 
     public double getAmount() {
