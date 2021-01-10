@@ -1,13 +1,13 @@
-package qr.Main;
+package Model;
 
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+@Component
 public class Payment {
 
     String companyName;
     double amount;
-    String currency;
-    String customer;
-    String date;
-    String status;
 
     public String getCompanyName() {
         return companyName;
@@ -17,12 +17,17 @@ public class Payment {
         this.companyName = companyName;
     }
 
-    public String getDate() {
-        return date;
-    }
-
     public void setDate(String date) {
         this.date = date;
+    }
+
+    String currency;
+    String customer;
+    String date;
+    String status;
+
+    public String getDate() {
+        return date;
     }
 
     public double getAmount() {

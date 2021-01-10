@@ -1,16 +1,29 @@
-package qr.Main;
+package Model;
 
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
 public class User {
 
     String firstName;
     String lastName;
-    int id;
+    String id;
     String cellPhone;
     String email;
     String password;
     String bankName;
     int branchNumber;
     int accountNumber;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -26,14 +39,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getCellPhone() {
