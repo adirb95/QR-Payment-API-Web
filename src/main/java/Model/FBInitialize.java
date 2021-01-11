@@ -20,7 +20,6 @@ public class FBInitialize {
             ClassLoader classLoader = getClass().getClassLoader();
             File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
             FileInputStream serviceAccount = new FileInputStream(file);
-                    //new FileInputStream("qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://qr-database-a6078.firebaseio.com")
