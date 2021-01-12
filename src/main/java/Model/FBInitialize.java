@@ -16,9 +16,10 @@ public class FBInitialize {
     @PostConstruct
     public void initialize() {
         try {
-            String fileName = "qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json";
+            String fileName = "jsonfile/qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json";
             ClassLoader classLoader = getClass().getClassLoader();
-            File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+            /*File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());*/
+            File file = new File("src/main/java/jsonfile/qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
             FileInputStream serviceAccount = new FileInputStream(file);
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
