@@ -15,7 +15,7 @@ public class HomePageController {
     @GetMapping("/homepage")
     String home(Model model){
 
-    model.addAttribute("name","sharon");
+    model.addAttribute("name","or");
     return "welcomepage";
 }
 }

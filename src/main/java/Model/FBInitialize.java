@@ -1,17 +1,14 @@
 package Model;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.auth.oauth2.AccessToken;
+
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
-import java.util.Arrays;
-import java.util.Objects;
+
 
 @Service
 public class FBInitialize {
