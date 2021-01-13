@@ -9,9 +9,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -26,10 +24,7 @@ public class FBInitialize {
             /*File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());*/
             /*File file = new File(fileName);*/
 
-            File file=new File("BOOT-INF/BOOT-INF.classes/jsonfile1.txt");
-           file.createNewFile();
-            FileWriter fileWriter=new FileWriter("BOOT-INF/BOOT-INF.classes/jsonfile1.txt");
-            fileWriter.write("{\n" +
+            String initialString = "{\n" +
                     "  \"type\": \"service_account\",\n" +
                     "  \"project_id\": \"qr-database-a6078\",\n" +
                     "  \"private_key_id\": \"5dd2f2d0f1e93a31459165e0a991c7e72eb6a6ed\",\n" +
@@ -40,11 +35,11 @@ public class FBInitialize {
                     "  \"token_uri\": \"https://oauth2.googleapis.com/token\",\n" +
                     "  \"auth_provider_x509_cert_url\": \"https://www.googleapis.com/oauth2/v1/certs\",\n" +
                     "  \"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-885ht%40qr-database-a6078.iam.gserviceaccount.com\"\n" +
-                    "}\n");
-            fileWriter.close();
-
-            FileInputStream serviceAccount = new FileInputStream("BOOT-INF/BOOT-INF.classes/jsonfile1.txt");
-            GoogleCredentials googleCred=GoogleCredentials.fromStream(serviceAccount);
+                    "}\n"
+                  ;
+            InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
+            /*FileInputStream serviceAccount = new FileInputStream("BOOT-INF/BOOT-INF.classes/jsonfile1.txt");*/
+            GoogleCredentials googleCred=GoogleCredentials.fromStream(targetStream);
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(googleCred)
                     .setDatabaseUrl("https://qr-database-a6078.firebaseio.com")
