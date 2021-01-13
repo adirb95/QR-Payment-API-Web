@@ -24,7 +24,7 @@ public class FBInitialize {
             ClassLoader classLoader = getClass().getClassLoader();
             /*File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());*/
             File file = new File(fileName);
-            FileInputStream serviceAccount = new FileInputStream("target/classes/qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
+            FileInputStream serviceAccount = new FileInputStream("BOOT-INF/classes/qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json");
             GoogleCredentials googleCred=GoogleCredentials.fromStream(serviceAccount);
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(googleCred)
