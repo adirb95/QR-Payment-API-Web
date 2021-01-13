@@ -109,10 +109,15 @@
     <packaging>jar</packaging>
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+
+                </configuration>
             </plugin>
+
         </plugins>
         <finalName>qr_payment_project_api</finalName>
     </build>
