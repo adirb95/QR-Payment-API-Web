@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'QR-Payment'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_36d919d032f24a078e61d0ac11de7ef2 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e8e52c30b4564005ab232f0ab948af9d }}
         package: '${{ github.workspace }}/target/*.jar'
