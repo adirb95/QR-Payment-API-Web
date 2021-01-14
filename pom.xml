@@ -18,9 +18,6 @@
 
     <properties>
         <java.version>8</java.version>
-
-            <tomcat.version>8.5.53</tomcat.version>
-
     </properties>
 
     <dependencies>
