@@ -35,7 +35,6 @@ public class FBInitialize {
                     "}\n"
                   ;
             InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
-            /*FileInputStream serviceAccount = new FileInputStream("BOOT-INF/BOOT-INF.classes/jsonfile1.txt");*/
             GoogleCredentials googleCred=GoogleCredentials.fromStream(targetStream);
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(googleCred)
