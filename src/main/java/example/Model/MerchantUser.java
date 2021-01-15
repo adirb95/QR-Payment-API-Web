@@ -1,4 +1,4 @@
-package Model;
+package example.Model;
 
 public class MerchantUser  {
     private String name;

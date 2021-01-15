@@ -1,8 +1,7 @@
-package Model;
+package example.Model;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 @Component
 public class Payment {
 
