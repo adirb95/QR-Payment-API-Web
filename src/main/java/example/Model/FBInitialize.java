@@ -16,11 +16,7 @@ public class FBInitialize {
     @PostConstruct
     public void initialize() {
         try {
-            String fileName = "src/main/java/jsonfile/qr-database-a6078-firebase-adminsdk-885ht-5dd2f2d0f1.json";
-            ClassLoader classLoader = getClass().getClassLoader();
-            /*File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());*/
-            /*File file = new File(fileName);*/
-
+            System.out.println("FireStore Boot has started");
             String initialString = "{\n" +
                     "  \"type\": \"service_account\",\n" +
                     "  \"project_id\": \"qr-database-a6078\",\n" +
@@ -32,16 +28,15 @@ public class FBInitialize {
                     "  \"token_uri\": \"https://oauth2.googleapis.com/token\",\n" +
                     "  \"auth_provider_x509_cert_url\": \"https://www.googleapis.com/oauth2/v1/certs\",\n" +
                     "  \"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-885ht%40qr-database-a6078.iam.gserviceaccount.com\"\n" +
-                    "}\n"
-                  ;
+                    "}\n";
             InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
-            GoogleCredentials googleCred=GoogleCredentials.fromStream(targetStream);
+            GoogleCredentials googleCred = GoogleCredentials.fromStream(targetStream);
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(googleCred)
                     .setDatabaseUrl("https://qr-database-a6078.firebaseio.com")
                     .build();
 
-                    FirebaseApp.initializeApp(options);
+            FirebaseApp.initializeApp(options);
         } catch (Exception e) {
             e.printStackTrace();
         }
