@@ -1,6 +1,4 @@
-package Model;
-
-import org.springframework.context.annotation.Primary;
+package example.Model;
 
 public class MerchantNewPayment {
     int transactionID;

@@ -1,16 +1,15 @@
-package Model;
+package example.Controller;
 
-import com.google.zxing.WriterException;
+import example.Model.HistoryService;
+import example.Model.Payment;
+import example.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import Model.HistoryService;
-import Model.Payment;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 

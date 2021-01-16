@@ -1,4 +1,4 @@
-package Model;
+package example.Model;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
@@ -17,13 +17,13 @@ public class LoginService {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = dbFirestore.collection("Users").get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
-        HashMap<String, User> userHashMap = new HashMap();
+        HashMap<String, User> userHashMap = new HashMap<>();
         for (QueryDocumentSnapshot document : documents) {
             userHashMap.put(document.toObject(User.class).getEmail(), document.toObject(User.class));
         }
         if (userHashMap.containsKey(email)) {
             System.out.println("User found!");
-            User known_user = new User();
+            User known_user;
             known_user = userHashMap.get(email); //fetching user from hashmap
             if (known_user.getPassword().equals(pw)) {   //return User if pw and username match
                 return known_user;
