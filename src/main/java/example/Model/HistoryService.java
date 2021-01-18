@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-@Service
+@Servi@Service
 public class HistoryService {
 
     public static List<Payment> getPayments(User user) throws InterruptedException, ExecutionException {
