@@ -31,4 +31,23 @@ public class LoginService {
         }
         return null; //user not found return false;
     }
+
+    public MerchantUser merchantLogIn(String email , String pw) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection("Merchants").get();
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+        HashMap<String, MerchantUser> merchantHashMap = new HashMap<>();
+        for (QueryDocumentSnapshot document : documents) {
+            merchantHashMap.put(document.toObject(User.class).getEmail(), document.toObject(MerchantUser.class));
+        }
+        if (merchantHashMap.containsKey(email)) {
+            System.out.println("Merchant found!");
+            MerchantUser known_merchant;
+            known_merchant = merchantHashMap.get(email); //fetching user from hashmap
+            if (known_merchant.getPassword().equals(pw)) {   //return User if pw and username match
+                return known_merchant;
+            }
+        }
+        return null; //user not found return false;
+    }
 }
