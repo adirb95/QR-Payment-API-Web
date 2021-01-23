@@ -38,7 +38,7 @@ public class LoginService {
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         HashMap<String, MerchantUser> merchantHashMap = new HashMap<>();
         for (QueryDocumentSnapshot document : documents) {
-            merchantHashMap.put(document.toObject(User.class).getEmail(), document.toObject(MerchantUser.class));
+            merchantHashMap.put(document.toObject(MerchantUser.class).getEmail(), document.toObject(MerchantUser.class));
         }
         if (merchantHashMap.containsKey(email)) {
             System.out.println("Merchant found!");

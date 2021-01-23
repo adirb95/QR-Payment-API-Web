@@ -1,6 +1,7 @@
 package example.Controller;
 
 import example.Model.HistoryService;
+import example.Model.MerchantUser;
 import example.Model.Payment;
 import example.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,12 @@ public class HistoryController {
     List<Payment>  getHistory(@RequestBody User user) throws ExecutionException, InterruptedException {
         return HistoryService.getPayments(user);
     }
+
+    @PostMapping("/merchantHistory")
+    List<Payment> getMerchantHistory (@RequestBody MerchantUser merchant) throws ExecutionException, InterruptedException {
+        return HistoryService.getMerchantPayments(merchant);
+    }
+
     @GetMapping("/welcome")
     String welcomepage(Model model){
         model.addAttribute("welcomepage","hello");
