@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@CrossOrigin(origins = "https://qr-payment.azurewebsites.net")
+@CrossOrigin
 public class LoginController {
 
     @Autowired

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://qr-payment.azurewebsites.net")
+@CrossOrigin
 public class NewPaymentController {
    @Autowired
     NewPaymentService newPaymentService;

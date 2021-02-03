@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@CrossOrigin(origins = "https://qr-payment.azurewebsites.net")
+@CrossOrigin
 public class HistoryController {
 
     @Autowired
