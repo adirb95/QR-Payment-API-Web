@@ -1,15 +1,9 @@
 package example.Controller;
 
 import com.google.zxing.WriterException;
-import example.Model.JsonIO;
-import example.Model.LoginInfo;
-import example.Model.MerchantNewPayment;
 import example.Model.QRCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -27,7 +21,7 @@ public class QRCodeController {
         QRCodeGenerator qrCodeGenerator = new QRCodeGenerator();
         qrCodeGenerator.generateQRCodeImage(codeText);
     }
-        @GetMapping(value = "/generateQR")
+        @PostMapping(value = "/generateQR")
         public byte[] generateQR(@RequestBody String paymentDetails) throws IOException, WriterException {
             System.out.println("QR generation initiated");
             return qrCodeGenerator.getQRCodeImage(paymentDetails);
