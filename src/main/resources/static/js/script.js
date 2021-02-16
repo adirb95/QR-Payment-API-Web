@@ -15,7 +15,7 @@ function setUsername() {
     document.getElementById("username_nav").innerText = userObj.name;
 }
 
-function nevigate(show, hide) {
+function navigate(show, hide) {
     //this function suppose to hide and show pages.
     //the function gets an id of the page to show and the id of the page to hide.
     document.getElementById(show).style = "display:block";
@@ -62,7 +62,7 @@ function submitLogin() {
         .then(result => {
             setUser(JSON.parse(result));
             resetLogin();
-            nevigate("home_page", "login_page");
+            navigate("home_page", "login_page");
         })
         .catch(error => {
             handleError(error)
@@ -79,7 +79,7 @@ function handleError(error) {
     document.getElementById("error-label-form").classList.add("has-error");
 }
 
-function nevigateHomePage() {
+function navigateHomePage() {
     document.getElementById("username_nav").value = userObj.name;
 }
 

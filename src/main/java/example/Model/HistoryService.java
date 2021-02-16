@@ -12,13 +12,13 @@ import java.util.concurrent.ExecutionException;
 
 @Service
 public class HistoryService {
-
+    static List<QueryDocumentSnapshot> documentSnapshots;
     public static List<Payment> getPayments(User user) throws InterruptedException, ExecutionException {
         System.out.println("User history requested");
         Firestore dbFirestore = FirestoreClient.getFirestore();
         DocumentReference documentReference = dbFirestore.collection("Payments").document(user.getId());
         ApiFuture<QuerySnapshot> documentQuery = documentReference.collection(user.getId()).get();
-        List<QueryDocumentSnapshot> documentSnapshots = documentQuery.get().getDocuments();
+        documentSnapshots = documentQuery.get().getDocuments();
         List<Payment> paymentList = new ArrayList<>();
         for (QueryDocumentSnapshot document : documentSnapshots) {
             paymentList.add(document.toObject(Payment.class));
@@ -31,7 +31,7 @@ public class HistoryService {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         DocumentReference documentReference = dbFirestore.collection("MerchantPayments").document(merchant.getName());
         ApiFuture<QuerySnapshot> documentQuery = documentReference.collection(merchant.getName()).get();
-        List<QueryDocumentSnapshot> documentSnapshots = documentQuery.get().getDocuments();
+        documentSnapshots = documentQuery.get().getDocuments();
         List<Payment> paymentList = new ArrayList<>();
         for (QueryDocumentSnapshot document : documentSnapshots) {
             paymentList.add(document.toObject(Payment.class));

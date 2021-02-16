@@ -10,7 +10,6 @@ public class HomePageController {
     @GetMapping("/homepage")
     String home(Model model){
 
-    model.addAttribute("name","or");
-    return "welcomepage";
+    return "index";
 }
 }
