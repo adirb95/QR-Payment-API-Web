@@ -3,8 +3,8 @@
 var userObj = {};
 var currencyEnum = {
     "ILS":"&#8362;",
-    "DOLAR":"&#36;",
-    "EURO":"&#128;",
+    "USD":"&#36;",
+    "EUR":"&#128;",
 }
 //global functions
 function setUser(user) {
