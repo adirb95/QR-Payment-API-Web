@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="login_page" class="container">
+        <div class="box">
+            <div class="row">
+                <div class="col s12 m12 l12 center">
+                    <img src="./images/logo_small.png" class="logo" alt="logo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m10 l8 offset-l2 offset-m1">
+                    <div id="email_div" class="input-field col s12 input-field-border" ">
+                        <i class=" material-icons prefix">email</i>
+                        <input placeholder="EMAIL" id="email" type="text" class="" onfocus="focusInChangeColor(this)"
+                            onfocusout="focusOutChangeColor(this)">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m10 l8 offset-l2 offset-m1">
+                    <div id="password_div" class="input-field col s12 input-field-border">
+                        <i class="material-icons prefix">lock</i>
+                        <input placeholder="PASSWORD" id="password" type="password" class=""
+                            onfocus="focusInChangeColor(this)" onfocusout="focusOutChangeColor(this)">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="default col s12 m10 l8 offset-l2 offset-m1" id="error-label-form">
+                    <span class="error-label">
+                        <svg aria-hidden="true" class="stUf5b qpSchb" fill="currentColor" focusable="false" width="16px"
+                            height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                            </path>
+                        </svg>
+                        Username or password is incorrect.
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m10 l8 offset-l2 offset-m1">
+                    <a class="waves-effect waves-light orange btn uppercase width-100" onclick="submitLogin()">sign
+                        in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main" style="display: none;">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo" onclick="nevigate('home_page','history_page')">
+                    <img src="./images/logo_small.PNG" alt="logo" class="main-logo">
+                </a>
+                <a href="#" class="right" id="username_nav" onclick="nevigate('login_page','home_page')"></a>
+                <ul id="nav-mobile" class="center-flex hide-on-med-and-down">
+                    <li class="tab">
+                        <a href="#" class="active margin-right-20" id="home_page_nav" onclick=
+                        "nevigate('home_page','history_page'), setActiveTab(this)">Generate QR
+                            Code
+                        </a>
+                    </li>
+                    <li class="tab">
+                        <a href="#" class="margin-left-20" id="history_page_nav" onclick=
+                        "getHistoryTransactions(), nevigate('history_page','home_page'), setActiveTab(this)">Transactions History
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="home_page" class="container" style="display:none;">
+            <div class="row">
+                <div class="col s12 m8 l5 offset-m2 offset-l1">
+                    <div id="left-container" class="row left-right-container">
+                        <div class="row">
+                            <div class="col s12 m12 l12 center">
+                                <h5>Generate a New QR Code</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m10 l8 col s12 m10 l8 offset-l2 offset-m1">
+                                <div id="price_div" class="input-field col s12 input-field-border" ">
+                                            <input placeholder=" Enter Price" id="price" type="text" class=""
+                                    onfocus="focusInChangeColor(this)" onfocusout="focusOutChangeColor(this)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m10 l8 offset-l2 offset-m1">
+                                <a class="waves-effect waves-light orange btn width-100" onclick="generateQR()">Generate
+                                    QR</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 l5 offset-m2 offset-l1">
+                    <div id="right-container" class="row left-right-container">
+                        <div class="row">
+                            <div class="col s12 m12 l12 center">
+                                <h5>QR Code Output</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 l12 center">
+                                <img id="QR_image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="history_page" class="container" style="display:none;">
+            <div class="row margin-bottom-0">
+                <div class="col s12 m12 l12 center">
+                    <h5>Transactions History</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <table class="highlight responsive-table" style="margin-top:40px;">
+                        <thead>
+                            <tr>
+                                <th>Comapny</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history_body_table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+body {
+    background-color: #f7f7f7;
+    color:#37474f;
+}
+.box{
+    border: 2px solid #90a4ae;
+    border-radius:5px;
+    background-color:white;
+    margin:100px 200px;
+    padding-bottom:20px;
+}
+
+.box-main-page{
+height:250px;
+}
+
+.center-flex{
+    display: flex;
+    justify-content: center;
+}
+.margin-bottom-0{
+    margin-bottom:0px;
+}
+
+.margin-right-20{
+    margin-right:20px;
+}
+
+.margin-left-20{
+    margin-left:20px;
+}
+.width-100{
+    width:100%;
+}
+
+
+.logo{
+    max-width: 250px;
+    margin:20px 0px;
+}
+
+.center{
+    text-align:center;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+/*input field*/ 
+.input-field .prefix {
+    border-right: 1px solid;
+}
+.input-field .prefix ~ input {
+    padding-left:15px;
+}
+.input-field-border {
+    border:1px solid;
+    border-radius: 5px;
+}
+input[type=text]:not(.browser-default) {
+    border-bottom: none !important;
+    margin-bottom:0px;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    box-shadow: none !important;
+}
+
+input[type=password]:not(.browser-default) {
+    border-bottom: none !important;
+    margin-bottom:0px;
+}
+
+input[type=password]:not(.browser-default):focus:not([readonly]) {
+    box-shadow: none !important;
+    
+}
+
+.input-field .prefix.active {
+    color:#ff9800 ;
+}
+
+.after-color {
+    border: 2px solid#ff9800  !important;
+}
+
+/*main page*/
+nav {
+    background-color: #455a64 ;
+    padding:0px 20px;
+}
+
+.main-logo{
+    max-width: 165px;
+}
+
+.left-right-container{
+    height: 550px;
+    background: white;
+    margin-top: 10px;
+    border: 2px solid #455a64;
+    border-radius: 5px;
+    margin: 40px 10px;
+}
+
+/*Login Error message*/
+.default.has-error {
+    display: block;
+    color: #d32f2f;
+    font-size: 14px;
+}
+
+.default {
+    display: none;
+    margin-top: 5px;
+}
+
+/*nav bar*/
+nav ul a.active{
+    background-color: rgba(0,0,0,0.1);
+}
