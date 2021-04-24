@@ -18,7 +18,7 @@ When you enter a price and click the Generate QR button, a QR code will appear a
 
 ![alt text](https://github.com/SharonMauda/Git-Pictures/blob/main/web%20QR.png?raw=true)
 
-The history page will show you all the transactions you initiated and have been approved by customers. You can see wether the transaction has been approved or not.
+The history page will show you all the transactions you initiated and have been approved by customers. You can see whether the transaction has been approved or not.
 
 ![alt text](https://github.com/SharonMauda/Git-Pictures/blob/main/web%20history.png?raw=true)
 
