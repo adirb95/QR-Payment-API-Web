@@ -23,7 +23,7 @@ public class LoginService {
             userHashMap.put(document.toObject(User.class).getEmail(), document.toObject(User.class));
         }
         if (userHashMap.containsKey(email.toLowerCase(Locale.ROOT))) {
-            System.out.println("User found!");
+            System.out.println("User found! ");
             User known_user;
             known_user = userHashMap.get(email); //fetching user from hashmap
             if (known_user.getPassword().equals(pw)) {   //return User if pw and username match
