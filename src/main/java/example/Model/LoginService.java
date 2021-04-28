@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 @Service
@@ -21,7 +22,7 @@ public class LoginService {
         for (QueryDocumentSnapshot document : documents) {
             userHashMap.put(document.toObject(User.class).getEmail(), document.toObject(User.class));
         }
-        if (userHashMap.containsKey(email)) {
+        if (userHashMap.containsKey(email.toLowerCase(Locale.ROOT))) {
             System.out.println("User found!");
             User known_user;
             known_user = userHashMap.get(email); //fetching user from hashmap
@@ -40,7 +41,7 @@ public class LoginService {
         for (QueryDocumentSnapshot document : documents) {
             merchantHashMap.put(document.toObject(MerchantUser.class).getEmail(), document.toObject(MerchantUser.class));
         }
-        if (merchantHashMap.containsKey(email)) {
+        if (merchantHashMap.containsKey(email.toLowerCase(Locale.ROOT))) {
             System.out.println("Merchant found!");
             MerchantUser known_merchant;
             known_merchant = merchantHashMap.get(email); //fetching user from hashmap
